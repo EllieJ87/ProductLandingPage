@@ -8,7 +8,7 @@ The overall aim was to acheive a product Landing page, this was only focusing on
 
 ![Product Landing Page](images/responsive-design.jpg) 
 
-A deployed version of my website can be found [here](https://elliej87.github.io/SurveyForm/)
+A deployed version of my website can be found [here](https://elliej87.github.io/ProductLandingPage/)
 
 This domain will allow you to access the Tribute Page website.
 
@@ -293,7 +293,7 @@ The hosting platform that I've used for my project is GitHub Pages. To deploy my
 
 ### <a name="repositorylink">Repository Link</a>
 
-[Survey Form](https://elliej87.github.io/SurveyForm/)
+[Product Landing Page](https://elliej87.github.io/ProductLandingPage/)
 
 ### <a name="runningcodelocally">Running Code Locally</a>
 
@@ -311,5 +311,7 @@ This website was a quick and fun site for me to practice more web development sk
 Background image was styled and designed by me.
 
 ## <a name="acknowledgmentsthanks">Acknowledgments</a>
+
+- Video content was taken from Hobby Lobby - I do not own any rights to this video this is purely a holding content and to test my skills of adding a youTube video content to my site.
 
 _**Created by Ellie Judge**_
