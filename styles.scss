@@ -1,0 +1,419 @@
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100;200;300;400;500;600;700&display=swap');
+
+// COLOUR //
+$Amaranth_Purple: #A63A50;
+$Linen: #F0E7D8;
+$Black_Shadow: #AB9B96;
+$Brown_Sugar: #A1674A;
+$Brown_Sugar_Alpha: rgba(161, 103, 74, 0.5);
+$Copper_Penny: #BA6E6E;
+
+// FONT SIZE //
+$font_size_reg: 1.1em;
+$font_size_lrg: 2em;
+
+// MIXINS //
+@mixin fontitalic {
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+@mixin fontbold {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+@mixin inlinemiddle{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Advent Pro', sans-serif;
+    background-color: $Linen;
+    color: $Brown_Sugar;
+    font-size: 1em;
+}
+
+// NAV BAR //
+
+#header-img {
+    margin-left: 30px;
+}
+
+.nav-link {
+    color: $Amaranth_Purple;
+    font-size: $font_size_reg;
+    @include fontitalic;
+    text-decoration: none;
+    overflow: hidden;
+    background: -webkit-gradient(linear, left top, right top, from($Brown_Sugar), color-stop(50%, $Brown_Sugar), color-stop(50%, $Amaranth_Purple));
+    background: linear-gradient(to right, $Brown_Sugar, $Brown_Sugar 50%, $Amaranth_Purple 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    background-position: 100%;
+    -webkit-transition: background-position 275ms ease;
+    transition: background-position 275ms ease;
+}
+  
+.nav-link:hover {
+    background-position: 0 100%;
+    font-weight: bold;
+}
+
+.navbar {
+    padding-top: 20px;
+}
+
+.nav-item {
+    padding-right: 20px;
+}
+
+/* Color of the navbar BEFORE scroll */
+.navbar-scroll {
+    background-color: $Linen;
+    text-align: end;
+}
+
+/* An optional height of the navbar AFTER scroll */
+.navbar.navbar-scroll.navbar-scrolled {
+  padding-top: auto;
+  padding-bottom: auto;
+}
+
+#bars {
+    font-size: 1.5em;
+    color: $Amaranth_Purple;
+}
+
+.contact {
+    background-color: $Amaranth_Purple;
+    color: $Linen;
+    font-size: $font_size_reg;
+    @include fontitalic;
+    font-weight: bold;
+    border-radius: 7px;
+    padding: 5px 10px;
+    text-align: center;
+    margin-right: 15px;
+
+    @include inlinemiddle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+
+.contact:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $Black_Shadow;
+    border-radius: 7px;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+
+.contact:hover, .contact:focus, .contact:active {
+    color: $Brown_Sugar;
+}
+
+.contact:hover:before, .contact:focus:before, .contact:active:before {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+//MAIN //
+section {
+    padding-top: 115px;
+}
+h1 {
+    font-weight: bold;
+}
+
+p {
+    line-height: 2;
+}
+
+h4 {
+    font-weight: bold;
+    font-style: italic;
+}
+
+// VIDEO //
+.video {
+    background-color: $Copper_Penny;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe, .video-container object, .video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+figcaption {
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 7px;
+    text-align: center;
+    color: $Linen;
+}
+
+.fas, .fab {
+    font-size: $font_size_lrg;
+    color: $Copper_Penny;
+    padding-right: 15px;
+}
+
+.howitworks {
+    margin: 20px;
+}
+
+.howitworks p {
+    line-height: 1.6;
+    font-weight: bold;
+    font-style: italic;
+    font-size: $font_size_reg;
+    padding-top: 1rem;
+}
+
+// PRICING //
+.product {
+    padding: 20px 10px;
+    margin: 10px;
+    background-color: $Brown_Sugar_Alpha;
+    text-align: center;
+    color: $Linen;
+}
+
+h3 {
+    font-weight: bold;
+    @include fontitalic;
+}   
+
+h5 {
+    font-weight: bold;
+    color: $Copper_Penny;
+}
+
+.des {
+    line-height: 1.2;
+    font-weight: $font_size_reg;
+    font-style: italic;
+}
+
+.select {
+    @include inlinemiddle;
+    width: 100%;
+    background-color: $Brown_Sugar;
+    color: $Linen;
+    font-weight: bold;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    overflow: hidden;
+}
+
+.select:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 51%;
+    right: 51%;
+    bottom: 0;
+    background-color: $Linen;
+    height: 4px;
+    -webkit-transition-property: left, right;
+    transition-property: left, right;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+
+.select:hover:before, .select:focus:before, .select:active:before {
+    left: 0;
+    right: 0;
+}
+
+.select:hover {
+    color: $Linen;
+    @include fontbold;
+}
+
+// FORM //
+#form {
+    margin: 10px;
+}
+
+label {
+    font-weight: bold;
+    color: $Amaranth_Purple;
+}
+
+.form-check-label {
+    color: $Copper_Penny;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.form-check-input:checked {
+    background-color: $Amaranth_Purple;
+    border-color: $Amaranth_Purple;
+}
+
+#submit {
+    @include fontbold;
+    @include inlinemiddle;
+    width: 100%;
+    background-color: $Copper_Penny;
+    color: $Linen;
+    margin-bottom: 25px;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+
+#submit:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $Amaranth_Purple;
+    border-radius: 0.25rem;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: 50%;
+    transform-origin: 50%;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+
+#submit:hover, #submit:focus, #submit:active {
+    color: $Linen;
+}
+
+#submit:hover:before, #submit:focus:before, #submit:active:before {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+// FOOTER //
+footer {
+    bottom: 0;
+    left: 0;
+    align-content: center;
+    padding-bottom: 15px;
+}
+
+.footer-text {
+    @include fontitalic;
+    display: flex;
+    align-self: center;
+    justify-content: flex-end;
+    color: $Brown_Sugar;
+    font-size: $font_size_reg;
+    font-weight: bold;
+}
+
+.footer-links {
+    display: flex;
+    align-self: center;
+    justify-content: flex-start;
+}
+
+.fa {
+    font-size: $font_size_lrg;
+    text-decoration: none;
+    color: $Black_Shadow;
+    @include inlinemiddle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+  }
+  .fa:hover, .fa:focus, .fa:active {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  .fa:hover {
+    color: $Amaranth_Purple;
+}
+
+.fa-linkedin-square {
+    padding: 0 5px 0 10px;
+}
+
+.fa-github {
+    padding: 0 10px;
+}
+
+@media (max-width: 576px) {  
+    
+    // MAIN CONTENT //
+    h1 {
+        text-align: center;
+    }
+
+    .footer-text  {
+        justify-content: center;
+        padding: 5px;
+    }
+
+    .footer-links {
+        justify-content: center;
+        padding: 5px;
+    }
+}
